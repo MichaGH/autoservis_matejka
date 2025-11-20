@@ -34,12 +34,19 @@ export default function Hero() {
 
           {/* CTA button */}
           <div className="mt-8 flex flex-wrap">
-            <a
-              href="/contact"
+            <button
+              onClick={() => {
+                const el = document.getElementById("contact");
+                if (el) {
+                  const yOffset = -80; // výška navbaru v px
+                  const y = el.getBoundingClientRect().top + window.pageYOffset + yOffset;
+                  window.scrollTo({ top: y, behavior: "smooth" });
+                }
+              }}
               className="px-6 py-3 border-2 border-yellow-400 text-gray-200 font-semibold rounded-lg hover:bg-yellow-500/50 transition"
             >
               Objednať servis
-            </a>
+            </button>
           </div>
 
           {/* Badges */}

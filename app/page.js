@@ -8,8 +8,9 @@ import ServicesList from "@/components/homepage/Services";
 import WarrantyInfo from "@/components/homepage/WarrantyInfo";
 import OpeningHours from "@/components/contact/OpeningHours";
 
-import MapComponent from "@/components/contact/map/MapComponent";
+import Map from "@/components/contact/Map"
 import ImageSection from "@/components/ui/ImageSection";
+import ContactUs from "@/components/contact/ContactUs";
 
 export default function Home() {
   return (
@@ -36,9 +37,12 @@ export default function Home() {
       </div>
 
       <SpacerRoad />
-      <div className="my-20 grid gap-8 md:grid-cols-2 max-w-7xl mx-auto px-6 py-10">
+      <div className="mt-30 mb-10">
+      <ContactUs />
+      </div>
+      <div className="mb-20 grid gap-8 md:grid-cols-2 max-w-7xl mx-auto px-6">
         <OpeningHours />
-        <MapComponent />
+        <Map />
       </div>
     </>
   );
