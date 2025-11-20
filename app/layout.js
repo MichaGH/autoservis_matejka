@@ -6,8 +6,9 @@ import {
   Meie_Script,
 } from "next/font/google";
 import "./globals.css";
-import NavBar from "../components/UI/NavBar";
-import Footer from "@/components/ui/Footer";
+import Navbar from "@/components/UI/NavBar";
+import Footer from "@/components/UI/Footer";
+
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -55,7 +56,7 @@ export default function RootLayout({
           "antialiased",
         ].join(" ")}
       >
-        <NavBar />
+        <Navbar />
         {children}
         <Footer />
       </body>

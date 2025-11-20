@@ -1,6 +1,6 @@
 import HeroCustom from "@/components/autoservis/HeroCustom";
-import ImageSection from "@/components/ui/ImageSection";
-import SpacerFlag from "@/components/ui/SpacerFlag";
+import ImageSection from "@/components/UI/ImageSection";
+import SpacerFlag from "@/components/UI/SpacerFlag";
 
 export default function Autoservis() {
     return (

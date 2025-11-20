@@ -4,7 +4,8 @@ import ACService from "@/components/autoservis/ACService";
 import DPFService from "@/components/autoservis/DPFService";
 import HeroCustom from "@/components/autoservis/HeroCustom";
 import TowHitchService from "@/components/autoservis/TowHitchService";
-import SpacerFlag from "@/components/ui/SpacerFlag";
+import SpacerFlag from "@/components/UI/SpacerFlag";
+
 
 export default function Autoservis() {
     return (

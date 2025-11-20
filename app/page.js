@@ -1,16 +1,14 @@
-import SpacerFlag from "@/components/ui/SpacerFlag";
-import SpacerLine from "@/components/ui/SpacerLine";
-import SpacerRoad from "@/components/ui/SpacerRoad";
-
-import Hero from "@/components/homepage/Hero";
-
-import ServicesList from "@/components/homepage/Services";
-import WarrantyInfo from "@/components/homepage/WarrantyInfo";
-import OpeningHours from "@/components/contact/OpeningHours";
-
-import Map from "@/components/contact/Map"
-import ImageSection from "@/components/ui/ImageSection";
 import ContactUs from "@/components/contact/ContactUs";
+import RealMapComponent from "@/components/contact/Map";
+import OpeningHours from "@/components/contact/OpeningHours";
+import Hero from "@/components/homepage/Hero";
+import ServicesList from "@/components/homepage/Services";
+import WarrantyInfoCompact from "@/components/homepage/WarrantyInfo";
+import ImageSection from "@/components/UI/ImageSection";
+import SpacerFlag from "@/components/UI/SpacerFlag";
+import SpacerLine from "@/components/UI/SpacerLine";
+import SpacerRoad from "@/components/UI/SpacerRoad";
+
 
 export default function Home() {
   return (
@@ -33,7 +31,7 @@ export default function Home() {
         imageSrc="/images/wheel.png"
         reverse
       />
-      <WarrantyInfo />
+      <WarrantyInfoCompact />
       </div>
 
       <SpacerRoad />
@@ -42,7 +40,7 @@ export default function Home() {
       </div>
       <div className="mb-20 grid gap-8 md:grid-cols-2 max-w-7xl mx-auto px-6">
         <OpeningHours />
-        <Map />
+        <RealMapComponent />
       </div>
     </>
   );
