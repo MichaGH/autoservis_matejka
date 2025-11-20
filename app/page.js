@@ -25,12 +25,12 @@ export default function Home() {
       <ImageSection
         title="Profesionálny servis a údržba"
         description="Opravujeme všetky značky áut s dôrazom na kvalitu a bezpečnosť. Využívame originálne alebo overené ekvivalentné diely a všetky práce sú riadne zdokumentované."
-        imageSrc="/images/garage.png"
+        imageSrc="/images/garage.webp"
       />
       <ImageSection
         title="Rýchle a spoľahlivé opravy"
         description="Vaše auto bude opravené včas, bez zbytočného čakania. Naši technici používajú moderné vybavenie a postupy, aby ste mohli bezpečne jazdiť čím skôr."
-        imageSrc="/images/wheel.png"
+        imageSrc="/images/wheel.webp"
         reverse
       />
       <WarrantyInfo />

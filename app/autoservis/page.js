@@ -13,7 +13,7 @@ export default function Autoservis() {
             <HeroCustom
                 title="Autoservis – profesionálny servis pre vaše vozidlo"
                 text="Spoľahlivé služby a moderné technológie pre bezpečnosť a komfort vášho auta."
-                image="/images/autoservice.png"
+                image="/images/autoservice.webp"
             />
             <SpacerFlag height={"20vh"} />
             <ACService />

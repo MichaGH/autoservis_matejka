@@ -8,7 +8,7 @@ export default function Hero() {
       {/* Background image */}
       <div className="absolute top-20 bottom-2 right-0 left-0 -z-10">
         <Image
-          src="/images/carBanner.png"
+          src="/images/carBanner.webp"
           alt="Car Banner"
           fill
           priority
