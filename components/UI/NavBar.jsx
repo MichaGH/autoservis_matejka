@@ -14,7 +14,6 @@ const navLinks = [
   { label: "Domov", href: "/" },
   { label: "Autoservis", href: "/autoservis" },
   { label: "motocykle", href: "/motocykle" },
-  { label: "Kontakt", href: "/kontakt" },
 ];
 
 const navHeight = {

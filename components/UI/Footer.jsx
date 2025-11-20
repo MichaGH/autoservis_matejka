@@ -28,9 +28,6 @@ const Footer = () => {
             <li>
               <Link href="/motocykle" className="hover:text-yellow-400">Motocykle</Link>
             </li>
-            <li>
-              <Link href="/kontakt" className="hover:text-yellow-400">Kontakt</Link>
-            </li>
           </ul>
         </div>
 
