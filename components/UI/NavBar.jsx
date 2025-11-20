@@ -13,7 +13,8 @@ const lineProps = {
 const navLinks = [
   { label: "Domov", href: "/" },
   { label: "Autoservis", href: "/autoservis" },
-  { label: "motocykle", href: "/motocykle" },
+  { label: "Motocykle", href: "/motocykle" },
+  { label: "Kontakt", href: "/#contactSection" },
 ];
 
 const navHeight = {

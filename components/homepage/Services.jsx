@@ -13,8 +13,7 @@ import {
   FaRegLightbulb,
   FaCog,
 } from "react-icons/fa";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "../UI/tabs";
-
+import { useState } from "react";
 
 const services = [
   { icon: <FaCar />, title: "Bežná údržba motorových vozidiel", cat: "udrzba" },
@@ -49,62 +48,67 @@ const categories = [
   { id: "ostatne", label: "Ostatné" },
 ];
 
-const ServicesList = () => {
+export default function ServicesList() {
+  const [activeTab, setActiveTab] = useState("udrzba");
+
+  const filtered = services.filter((s) => s.cat === activeTab);
+
   return (
-    <section className="relative w-full py-30 text-gray-100 flex justify-center">
-  <div className="max-w-7xl w-full px-6">
-    <div className="flex flex-col items-start">
-      <h2 className="text-4xl sm:text-5xl mb-4 text-white">
-        Služby servisu automobilov a motocyklov
-      </h2>
+    <section className="w-full py-24  text-gray-100 flex justify-center">
+      <div className="max-w-7xl w-full px-6 flex flex-col items-center">
+        <h2 className="text-4xl sm:text-5xl mb-4 text-white text-center">
+          Široké spektrum služieb
+        </h2>
 
-      <p className="mb-10 text-gray-300 max-w-3xl">
-        Ponúkame kompletné servisné služby pre osobné vozidlá aj motocykle –
-        od diagnostiky až po karosárske práce.
-      </p>
+        <p className="mb-10 text-gray-300 max-w-3xl text-center">
+          Ponúkame kompletné servisné služby pre osobné vozidlá aj motocykle –
+          od diagnostiky až po karosárske práce.
+        </p>
 
-      <Tabs defaultValue="udrzba" className="w-full">
-        <TabsList className="flex flex-wrap gap-2 bg-transparent p-0 mb-8">
+        {/* CATEGORY BUTTONS */}
+        <div className="flex flex-wrap justify-center gap-2 mb-10">
           {categories.map((c) => (
-            <TabsTrigger
+            <button
               key={c.id}
-              value={c.id}
-              className="px-4 py-2 rounded-sm border border-yellow-400 bg-black data-[state=active]:bg-yellow-400 data-[state=active]:text-black transition"
+              onClick={() => setActiveTab(c.id)}
+              className={[
+                "px-4 py-2 text-sm sm:text-base rounded-full border transition",
+                "border-yellow-400",
+                activeTab === c.id
+                  ? "bg-yellow-400 text-black"
+                  : "bg-black/70 text-white hover:bg-zinc-900",
+              ].join(" ")}
             >
               {c.label}
-            </TabsTrigger>
+            </button>
           ))}
-        </TabsList>
+        </div>
 
-        {categories.map((cat) => (
-          <TabsContent key={cat.id} value={cat.id}>
+        {/* SERVICES – FLEX LAYOUT FOR CENTERED CARDS */}
+        <div className="mt-4 flex flex-wrap justify-center gap-6 w-full">
+          {filtered.map((service, idx) => (
             <div
-              className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6"
-              style={{ gridAutoRows: "1fr" }}
+              key={idx}
+              className={[
+                "flex flex-col items-center text-center",
+                "p-6 border border-white/10 bg-zinc-950/80 hover:bg-zinc-900 transition",
+                "rounded-md shadow-sm",
+                "min-h-[170px]",
+                // responsive "columns": 1 / 2 / 3 / 4
+                "basis-full sm:basis-1/2 md:basis-1/3 lg:basis-1/4",
+                "max-w-xs",
+              ].join(" ")}
             >
-              {services
-                .filter((s) => s.cat === cat.id)
-                .map((service, idx) => (
-                  <div
-                    key={idx}
-                    className="flex flex-col items-center text-center p-6 border border-white bg-zinc-950 hover:bg-zinc-800 transition h-full"
-                    style={{ minHeight: "170px" }} // pevná minimálna výška
-                  >
-                    <div className="text-5xl text-yellow-400 mb-3 shrink-0">
-                      {service.icon}
-                    </div>
-                    <h3 className="text-lg flex-1">{service.title}</h3>
-                  </div>
-                ))}
+              <div className="text-4xl sm:text-5xl text-yellow-400 mb-3 shrink-0">
+                {service.icon}
+              </div>
+              <h3 className="text-base sm:text-lg leading-snug">
+                {service.title}
+              </h3>
             </div>
-          </TabsContent>
-        ))}
-      </Tabs>
-    </div>
-  </div>
-</section>
-
+          ))}
+        </div>
+      </div>
+    </section>
   );
-};
-
-export default ServicesList;
+}

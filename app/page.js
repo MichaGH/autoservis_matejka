@@ -1,11 +1,13 @@
 import ContactUs from "@/components/contact/ContactUs";
 import RealMapComponent from "@/components/contact/Map";
+import MapSection from "@/components/contact/MapSection";
 import OpeningHours from "@/components/contact/OpeningHours";
 import Hero from "@/components/homepage/Hero";
 import ServicesList from "@/components/homepage/Services";
 import WarrantyInfoCompact from "@/components/homepage/WarrantyInfo";
 import ImageSection from "@/components/UI/ImageSection";
 import SpacerFlag from "@/components/UI/SpacerFlag";
+import SpacerFlag2 from "@/components/UI/SpacerFlag2";
 import SpacerLine from "@/components/UI/SpacerLine";
 import SpacerRoad from "@/components/UI/SpacerRoad";
 
@@ -15,10 +17,11 @@ export default function Home() {
     <>
       <Hero />
 
-      <SpacerFlag height="20vh" />
+      {/* <SpacerFlag height="20vh" /> */}
+      <SpacerFlag2 squareSize={20} rows={4} />
       <ServicesList />
 
-      <SpacerLine />
+     <SpacerLine /> 
       <div className="mt-20">
       <ImageSection
         title="Profesionálny servis a údržba"
@@ -38,10 +41,7 @@ export default function Home() {
       <div className="mt-30 mb-10">
       <ContactUs />
       </div>
-      <div className="mb-20 grid gap-8 md:grid-cols-2 max-w-7xl mx-auto px-6">
-        <OpeningHours />
-        <RealMapComponent />
-      </div>
+      <MapSection />
     </>
   );
 }

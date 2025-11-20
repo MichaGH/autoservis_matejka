@@ -2,7 +2,6 @@
 
 import React from "react";
 
-
 const defaultHours = [
   { day: "Pondelok", open: "08:30", close: "16:00" },
   { day: "Utorok", open: "08:30", close: "16:00" },
@@ -15,18 +14,43 @@ const defaultHours = [
 
 const OpeningHours = ({ hours = defaultHours }) => {
   return (
-    <div className="text-foreground rounded-2xl py-6 shadow-lg max-w-2xl w-full mx-auto">
-      <h2 className="text-2xl font-semibold mb-4">Otváracie hodiny</h2>
-      <table className="w-full text-left border-collapse">
+    <div className="max-w-md w-full mx-auto rounded-xl  bg-zinc-950/80 px-6 py-5 text-gray-100">
+      <h2 className="text-lg sm:text-xl font-semibold mb-3 flex items-center justify-between">
+        <span>Otváracie hodiny</span>
+        <span className="text-[11px] tracking-[0.2em] uppercase text-yellow-400">
+          Servis
+        </span>
+      </h2>
+
+      <table className="w-full text-sm border-collapse">
         <tbody>
-          {hours.map((item) => (
-            <tr key={item.day} className="even:bg-(--background)/20">
-              <td className="py-2 font-medium">{item.day}</td>
-              <td className="py-2 text-right">
-                {item.close ? `${item.open} - ${item.close}` : item.open}
-              </td>
-            </tr>
-          ))}
+          {hours.map((item) => {
+            const isClosed = item.open.toLowerCase() === "zatvorené";
+
+            return (
+              <tr
+                key={item.day}
+                className="border-t border-zinc-800 first:border-t-0"
+              >
+                <td className="py-2.5 pr-3 align-middle">
+                  <span className="font-medium text-gray-200">
+                    {item.day}
+                  </span>
+                </td>
+                <td className="py-2.5 pl-3 text-right align-middle">
+                  {isClosed ? (
+                    <span className="text-xs font-semibold uppercase tracking-wide text-zinc-500">
+                      Zatvorené
+                    </span>
+                  ) : (
+                    <span className="tabular-nums text-gray-100">
+                      {item.open} – {item.close}
+                    </span>
+                  )}
+                </td>
+              </tr>
+            );
+          })}
         </tbody>
       </table>
     </div>

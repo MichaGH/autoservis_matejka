@@ -2,8 +2,8 @@
 
 const SpacerLine = () => {
   return (
-    <div className="my-8 flex justify-center">
-      <div className="w-24 h-px bg-gray-400"></div>
+    <div className="mb-12 flex justify-center">
+      <div className="h-px w-[80%] bg-gradient-to-r from-transparent via-zinc-600 to-transparent"></div>
     </div>
   );
 };

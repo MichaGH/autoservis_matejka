@@ -2,7 +2,6 @@
 
 import Image from "next/image";
 
-
 const ImageSection = ({
   title,
   description,
@@ -11,24 +10,45 @@ const ImageSection = ({
   reverse = false,
 }) => {
   return (
-    <section className="max-w-7xl mx-auto px-6 py-10 flex flex-col md:flex-row items-center gap-10">
-      <div
-        className={`flex-1 space-y-6 ${
-          reverse ? "md:order-2 text-right md:text-left" : "md:order-1 text-left"
-        }`}
-      >
-        <h2 className="text-4xl font-bold text-white ">{title}</h2>
-        <p className="text-gray-300 text-lg whitespace-pre-line">{description}</p>
-      </div>
+    <section className="py-16">
+      <div className="max-w-7xl mx-auto px-6">
+        <div className="grid gap-10 md:gap-16 md:grid-cols-2 items-center">
+          {/* Text block */}
+          <div
+            className={`space-y-5 ${
+              reverse ? "md:order-2 md:pl-4" : "md:order-1 md:pr-4"
+            }`}
+          >
+            <h2 className="text-3xl sm:text-4xl font-semibold text-white">
+              {title}
+            </h2>
 
-      <div className={`flex-1 ${reverse ? "md:order-1" : "md:order-2"}`}>
-        <Image
-          src={imageSrc}
-          alt={imageAlt}
-          width={600}
-          height={400}
-          className="rounded-lg shadow-lg object-cover"
-        />
+            <div className="h-1 w-full rounded-full bg-yellow-400" />
+
+            <p className="text-sm sm:text-base text-gray-300 whitespace-pre-line leading-relaxed">
+              {description}
+            </p>
+          </div>
+
+          {/* Image block */}
+          <div
+            className={`${
+              reverse ? "md:order-1 md:pr-4" : "md:order-2 md:pl-4"
+            }`}
+          >
+            <div className="group relative overflow-hidden rounded-xl border border-zinc-800 bg-zinc-900/60">
+              <div className="aspect-[4/3]">
+                <Image
+                  src={imageSrc}
+                  alt={imageAlt}
+                  fill
+                  sizes="(min-width: 1024px) 50vw, 100vw"
+                  className="object-cover transition-transform duration-500 group-hover:scale-105"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
   );

@@ -23,37 +23,53 @@ export default function Hero() {
 
       {/* Content wrapper */}
       <div className="relative px-6 sm:px-10 lg:px-16 lg:ml-16 max-w-7xl w-full">
-        <div className="max-w-2xl">
-          <h1 className="text-3xl sm:text-4xl md:text-4xl font-primary leading-tight">
-            Profesionálny autoservis pre vaše vozidlo
-          </h1>
-
-          <p className="mt-4 text-gray-300 max-w-lg">
-            Kompletné opravy áut, pravidelná údržba a diagnostika. Spoľahlivé riešenia pre bezpečnú jazdu a dlhú životnosť vášho vozidla.
+        <div className="max-w-xl sm:max-w-2xl space-y-6">
+          {/* Overline */}
+          <p className="text-[11px] tracking-[0.25em] uppercase text-yellow-400 font-semibold">
+            Autoservis & pneuservis v Martine
           </p>
 
-          {/* CTA button */}
-          <div className="mt-8 flex flex-wrap">
-            <button
-              onClick={() => {
-                const el = document.getElementById("contact");
-                if (el) {
-                  const yOffset = -80; // výška navbaru v px
-                  const y = el.getBoundingClientRect().top + window.pageYOffset + yOffset;
-                  window.scrollTo({ top: y, behavior: "smooth" });
-                }
-              }}
-              className="px-6 py-3 border-2 border-yellow-400 text-gray-200 font-semibold rounded-lg hover:bg-yellow-500/50 transition"
+          {/* Heading */}
+          <h1 className="text-3xl sm:text-4xl md:text-5xl font-primary leading-tight text-white">
+            Profesionálny servis pre vaše vozidlo
+          </h1>
+
+          {/* Description */}
+          <p className="text-sm sm:text-base text-gray-300 leading-relaxed max-w-xl">
+            Kompletné opravy, pravidelná údržba, diagnostika a pneuservis.
+            Spoľahlivé riešenia pre bezpečnú jazdu a dlhú životnosť vášho auta
+            aj motocyklu.
+          </p>
+
+          {/* CTA buttons */}
+          <div className="pt-2 flex flex-wrap items-center gap-4">
+            <a
+              href="#contactSection"
+              className="inline-flex items-center justify-center rounded-lg bg-yellow-400 px-6 py-3 text-sm font-semibold text-black hover:bg-yellow-500 transition"
             >
               Objednať servis
-            </button>
+            </a>
+
+            <a
+              href="#contactSection"
+              className="inline-flex items-center justify-center rounded-lg border border-zinc-600 px-6 py-3 text-sm font-medium text-gray-100 hover:border-yellow-400 hover:text-yellow-400 transition"
+            >
+              Zavolať a dohodnúť termín
+            </a>
           </div>
 
           {/* Badges */}
-          <div className="mt-8 flex flex-wrap gap-6 text-sm text-gray-400">
-            <p>Autoservis</p>
-            <p>Pneuservis</p>
-            <p>Dezinfekcia ozónom O3</p>
+          <div className="pt-2 flex flex-wrap gap-3 text-xs sm:text-sm">
+            {["Autoservis", "Pneuservis", "Dezinfekcia ozónom O₃"].map(
+              (label) => (
+                <span
+                  key={label}
+                  className="rounded-full border border-zinc-700/80 bg-black/60 px-4 py-1.5 text-gray-200 uppercase tracking-[0.12em] text-[10px] sm:text-[11px]"
+                >
+                  {label}
+                </span>
+              )
+            )}
           </div>
         </div>
       </div>
