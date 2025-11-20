@@ -13,8 +13,8 @@ import {
   FaRegLightbulb,
   FaCog,
 } from "react-icons/fa";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "../UI/tabs";
 
-import { Tabs, TabsList, TabsTrigger, TabsContent, } from "@/components/ui/tabs";
 
 const services = [
   { icon: <FaCar />, title: "Bežná údržba motorových vozidiel", cat: "udrzba" },
