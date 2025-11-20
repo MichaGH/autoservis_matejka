@@ -1,29 +1,10 @@
 "use client";
 
 import React from "react";
-import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
-import L from "leaflet";
-import "leaflet/dist/leaflet.css";
 
-// Oprava ikon Leafletu
-// eslint-disable-next-line @typescript-eslint/ban-ts-comment
-// @ts-expect-error
-delete L.Icon.Default.prototype._getIconUrl;
-
-L.Icon.Default.mergeOptions({
-  iconRetinaUrl:
-    "https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/images/marker-icon-2x.png",
-  iconUrl:
-    "https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/images/marker-icon.png",
-  shadowUrl:
-    "https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/images/marker-shadow.png",
-});
-
-const RealMapComponent= () => {
-  const position = [49.052298194403846, 18.916140275371166];
-  const zoom= 13;
-
+const RealMapComponent = () => {
   const handleNavigate = () => {
+    const position = [49.052298194403846, 18.916140275371166];
     window.open(
       `https://www.google.com/maps/dir/?api=1&destination=${position[0]},${position[1]}`,
       "_blank"
@@ -37,16 +18,16 @@ const RealMapComponent= () => {
         <span className="text-yellow-400">Kollárova 73, Martin</span>
       </h2>
 
-      <div className="relative w-full h-80 mb-4 rounded-lg overflow-hidden shadow-md z-0">
-        <MapContainer center={position} zoom={zoom} className="w-full h-full z-0">
-          <TileLayer
-            url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-            attribution='&copy; OpenStreetMap'
-          />
-          <Marker position={position}>
-            <Popup>Tu nás nájdete!</Popup>
-          </Marker>
-        </MapContainer>
+      <div className="relative w-full h-80 mb-4 rounded-lg overflow-hidden shadow-md">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d777.386604105816!2d18.915631444940562!3d49.05230390132612!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zNDnCsDAzJzA4LjMiTiAxOMKwNTQnNTguMSJF!5e0!3m2!1ssk!2ssk!4v1763648609107!5m2!1ssk!2ssk"
+          width="100%"
+          height="100%"
+          style={{ border: 0 }}
+          allowFullScreen
+          loading="lazy"
+          referrerPolicy="no-referrer-when-downgrade"
+        ></iframe>
       </div>
 
       <button
