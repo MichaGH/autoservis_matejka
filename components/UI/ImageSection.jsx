@@ -10,7 +10,7 @@ const ImageSection = ({
   reverse = false,
 }) => {
   return (
-    <section className="py-16">
+    <section className="bg-zinc-950 py-16">
       <div className="max-w-7xl mx-auto px-6">
         <div className="grid gap-10 md:gap-16 md:grid-cols-2 items-center">
           {/* Text block */}
@@ -36,7 +36,7 @@ const ImageSection = ({
               reverse ? "md:order-1 md:pr-4" : "md:order-2 md:pl-4"
             }`}
           >
-            <div className="group relative overflow-hidden rounded-xl border border-zinc-800 bg-zinc-900/60">
+            <div className="group relative overflow-hidden rounded-sm border border-yellow-400/25 bg-zinc-900/60">
               <div className="aspect-[4/3]">
                 <Image
                   src={imageSrc}

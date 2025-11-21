@@ -44,14 +44,13 @@ export default function Navbar() {
         height: scrolled ? navHeight.scrolled : navHeight.unscrolled,
       }}
       transition={{ duration: 0.3 }}
-      className={`${scrolled ? "border-b border-white" : "border-b border-white"
-        } fixed top-0 left-0 w-full z-50 font-space-grotesk`}
+      className={`border-b border-white/25 fixed top-0 left-0 w-full z-50 font-space-grotesk`}
     >
       <div className="flex items-center justify-between h-full px-6 sm:px-10 lg:px-16 lg:ml-16">
         {/* LEFT: Logo */}
         <Link href="/" className="flex items-center h-full">
           <div className="flex flex-col leading-none">
-            <span className="text-white font-fancy text-3xl">
+            <span className="text-white font-logo  text-3xl lg:text-4xl">
               Autoservis Matejka Zdenko
             </span>
           </div>

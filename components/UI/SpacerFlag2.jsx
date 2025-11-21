@@ -1,8 +1,8 @@
 "use client";
 
 const SpacerFlag2 = ({
-  squareSize = 12, // px
-  rows = 2,        // how many full rows of squares you want visible
+  squareSize = 20, // px
+  rows = 4,        // how many full rows of squares you want visible
 }) => {
   const height = rows * squareSize;
   const tile = squareSize * 2; // one full checker tile (2x2)

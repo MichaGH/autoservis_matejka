@@ -8,7 +8,7 @@ const points = [
 
 const WarrantyInfoCompact = () => {
   return (
-    <section className="bg-black">
+    <section className="">
       <div className="max-w-3xl mx-auto px-6 py-16 text-gray-200 text-center">
         
         {/* Overline */}

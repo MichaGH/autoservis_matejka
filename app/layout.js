@@ -4,11 +4,18 @@ import {
   Space_Grotesk,
   Inter,
   Meie_Script,
+  Momo_Trust_Display,
+  Lobster,
 } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/UI/NavBar";
 import Footer from "@/components/UI/Footer";
 
+const logoFont = Lobster({
+    variable: "--font-logo",
+    weight: ["400"],
+  subsets: ["latin"],
+})
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -53,7 +60,8 @@ export default function RootLayout({
           spaceGrotesk.variable,
           inter.variable,
           meieScript.variable,
-          "antialiased",
+          logoFont.variable,
+          "antialiased bg-zinc-950",
         ].join(" ")}
       >
         <Navbar />

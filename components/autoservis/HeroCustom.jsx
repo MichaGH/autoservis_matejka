@@ -18,12 +18,12 @@ const HeroCustom = ({ title, text, image }) => {
       </div>
 
       {/* Text */}
-      <div className="text-center px-6">
-        <h1 className="text-3xl sm:text-4xl md:text-4xl font-primary text-gray-100 mb-4">
+      <div className="text-center px-6 font-primary">
+        <h1 className="text-3xl sm:text-4xl md:text-4xl font-primary  mb-4">
           {title}
         </h1>
 
-        <p className="text-gray-300 text-lg md:text-xl max-w-2xl font-secondary mx-auto">
+        <p className="text-yellow-400/75 text-lg md:text-xl max-w-2xl font-secondary mx-auto">
           {text}
         </p>
       </div>

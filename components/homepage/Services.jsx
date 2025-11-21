@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import {
   FaCar,
   FaTools,
@@ -54,7 +55,7 @@ export default function ServicesList() {
   const filtered = services.filter((s) => s.cat === activeTab);
 
   return (
-    <section className="w-full py-24  text-gray-100 flex justify-center">
+    <section className="w-full py-24 text-gray-100 flex justify-center">
       <div className="max-w-7xl w-full px-6 flex flex-col items-center">
         <h2 className="text-4xl sm:text-5xl mb-4 text-white text-center">
           Široké spektrum služieb
@@ -84,7 +85,7 @@ export default function ServicesList() {
           ))}
         </div>
 
-        {/* SERVICES – FLEX LAYOUT FOR CENTERED CARDS */}
+        {/* SERVICES GRID */}
         <div className="mt-4 flex flex-wrap justify-center gap-6 w-full">
           {filtered.map((service, idx) => (
             <div
@@ -92,11 +93,8 @@ export default function ServicesList() {
               className={[
                 "flex flex-col items-center text-center",
                 "p-6 border border-white/10 bg-zinc-950/80 hover:bg-zinc-900 transition",
-                "rounded-md shadow-sm",
-                "min-h-[170px]",
-                // responsive "columns": 1 / 2 / 3 / 4
-                "basis-full sm:basis-1/2 md:basis-1/3 lg:basis-1/4",
-                "max-w-xs",
+                "rounded-md shadow-sm min-h-[170px]",
+                "basis-full sm:basis-1/2 md:basis-1/3 lg:basis-1/4 max-w-xs",
               ].join(" ")}
             >
               <div className="text-4xl sm:text-5xl text-yellow-400 mb-3 shrink-0">
@@ -108,6 +106,14 @@ export default function ServicesList() {
             </div>
           ))}
         </div>
+
+        {/* CTA BUTTON */}
+        <Link
+          href="/autoservis"
+          className=" font-primary uppercase mt-14 inline-flex items-center justify-center px-8 py-3 rounded-sm border border-yellow-400 text-yellow-400 hover:bg-yellow-400 hover:text-black transition "
+        >
+          Viac o Autoservise
+        </Link>
       </div>
     </section>
   );

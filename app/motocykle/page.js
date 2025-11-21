@@ -1,6 +1,7 @@
 import HeroCustom from "@/components/autoservis/HeroCustom";
 import ImageSection from "@/components/UI/ImageSection";
 import SpacerFlag from "@/components/UI/SpacerFlag";
+import SpacerFlag2 from "@/components/UI/SpacerFlag2";
 
 export default function Autoservis() {
     return (
@@ -11,7 +12,7 @@ export default function Autoservis() {
                 image="/images/motorcycle.png"
             />
 
-            <SpacerFlag height={"20vh"} />
+             <SpacerFlag2 />
             
             <div className="my-20">
                 <ImageSection

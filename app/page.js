@@ -18,26 +18,29 @@ export default function Home() {
       <Hero />
 
       {/* <SpacerFlag height="20vh" /> */}
-      <SpacerFlag2 squareSize={20} rows={4} />
+      <SpacerFlag2 />
       <ServicesList />
 
-     <SpacerLine /> 
-      <div className="mt-20">
+      
+      
       <ImageSection
         title="Profesionálny servis a údržba"
         description="Opravujeme všetky značky áut s dôrazom na kvalitu a bezpečnosť. Využívame originálne alebo overené ekvivalentné diely a všetky práce sú riadne zdokumentované."
-        imageSrc="/images/garage.png"
+        imageSrc="/images/car1.png"
       />
       <ImageSection
         title="Rýchle a spoľahlivé opravy"
         description="Vaše auto bude opravené včas, bez zbytočného čakania. Naši technici používajú moderné vybavenie a postupy, aby ste mohli bezpečne jazdiť čím skôr."
-        imageSrc="/images/wheel.png"
+        imageSrc="/images/interior1.png"
         reverse
       />
-      <WarrantyInfoCompact />
+      <div className="w-full mt-14">
+<SpacerLine />
       </div>
+      
+      
 
-      <SpacerRoad />
+      {/* <SpacerRoad /> */}
       <div className="mt-30 mb-10">
       <ContactUs />
       </div>

@@ -1,57 +1,72 @@
 "use client";
 
-import React from "react";
-import { FaCheckCircle, FaRegStar , FaBalanceScale } from "react-icons/fa";
+import Image from "next/image";
 
 const TowHitchService = () => {
-  const features = [
-    {
-      icon: <FaCheckCircle className="text-yellow-400 text-3xl" />,
-      title: "ISO 50",
-      description: "Kompatibilné so všetkými typmi osobných a úžitkových vozidiel.",
-    },
-    {
-      icon: <FaRegStar  className="text-yellow-400 text-3xl" />,
-      title: "Najlepšia povrchová úprava",
-      description: "Zaručuje odolnosť a dlhú životnosť, žiadna farba sa jej nevyrovná.",
-    },
-    {
-      icon: <FaBalanceScale className="text-yellow-400 text-3xl" />,
-      title: "Schválené E27",
-      description: "Spĺňajú medzinárodné normy a smernice ISO 9001:2008.",
-    },
-  ];
+    return (
+        <section className="bg-zinc-950 text-gray-100">
+            <div className="max-w-7xl mx-auto px-6 py-16 lg:py-20 grid gap-16 lg:grid-cols-2 items-center">
+                <div className="relative">
+                    <div className="relative overflow-hidden rounded-2xl border border-zinc-800 bg-zinc-900/60 shadow-[0_0_40px_rgba(0,0,0,0.7)]">
+                        <div className="aspect-[4/3]">
+                            <Image
+                                src="/images/autoservis/tow_hitch.webp" // 👈 nahraď za reálnu fotku ťažného
+                                alt="Montáž ťažného zariadenia"
+                                fill
+                                sizes="(min-width: 1024px) 40vw, 100vw"
+                                className="object-cover"
+                            />
+                        </div>
+                        <div className="pointer-events-none absolute inset-0 bg-gradient-to-tr from-black/30 via-transparent to-black/10" />
+                    </div>
+                </div>
+                {/* TEXT SIDE */}
+                <div className="space-y-5">
+                    <p className="text-[11px] font-semibold tracking-[0.25em] text-yellow-400 uppercase">
+                        Ťažné zariadenia
+                    </p>
 
-  return (
-    <section className="max-w-7xl mx-auto px-6 md:px-0 pb-30">
-      <div className="flex flex-col md:flex-row md:items-start gap-12">
-        {/* Výhody vľavo */}
-        <div className="md:flex-1 flex flex-col gap-6">
-          {features.map((f, idx) => (
-            <div key={idx} className="flex items-start gap-4">
-              <div className="shrink-0 flex items-center justify-center w-14 h-14 bg-zinc-800 rounded-full shadow-md">
-                {f.icon}
-              </div>
-              <div>
-                <p className="font-semibold text-gray-100 mb-1">{f.title}</p>
-                <p className="text-gray-400 text-sm">{f.description}</p>
-              </div>
+                    <h2 className="text-2xl sm:text-3xl md:text-4xl font-primary text-white leading-tight">
+                        Montáž ťažných zariadení GALIA
+                    </h2>
+
+                    <p className="text-sm sm:text-base text-gray-300 leading-relaxed">
+                        Odborná montáž ťažných zariadení s guľou ISO 50 pre osobné aj
+                        úžitkové vozidlá. Dbáme na správnu montáž podľa odporúčaní výrobcu
+                        a platnej legislatívy, aby bolo vozidlo pripravené na bezpečné
+                        ťahanie prívesu alebo nosiča bicyklov.
+                    </p>
+
+                    <div className="grid gap-4 sm:grid-cols-2 text-sm">
+                        <div>
+                            <p className="text-[11px] font-semibold tracking-[0.18em] uppercase text-gray-400">
+                                Montáž & použitie
+                            </p>
+                            <ul className="mt-1.5 space-y-1 text-gray-200">
+                                <li>• ťažné zariadenia GALIA s guľou ISO 50</li>
+                                <li>• pre osobné aj úžitkové vozidlá</li>
+                                <li>• vhodné pre príves, nosič bicyklov a pracovné využitie</li>
+                            </ul>
+                        </div>
+
+                        <div>
+                            <p className="text-[11px] font-semibold tracking-[0.18em] uppercase text-gray-400">
+                                Kvalita & schválenie
+                            </p>
+                            <ul className="mt-1.5 space-y-1 text-gray-200">
+                                <li>• zinková povrchová úprava s vysokou odolnosťou</li>
+                                <li>• schválené podľa E27 a EHK 55</li>
+                                <li>• výroba v súlade s ISO 9001:2008</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                {/* IMAGE SIDE */}
+
             </div>
-          ))}
-        </div>
-
-        {/* Hlavný text vpravo */}
-        <div className="md:flex-1">
-          <h2 className="text-3xl md:text-4xl font-bold mb-6 text-gray-100 text-center md:text-left">
-            Ťažné zariadenia
-          </h2>
-          <p className="text-gray-300 text-center md:text-left">
-            Montáž ťažného zariadenia s guľou ISO 50 pre všetky typy vozidiel. Naša najkvalitnejšia povrchová úprava zaručuje odolnosť a dlhú životnosť. Všetky zariadenia sú schválené podľa E27 a ISO 9001:2008.
-          </p>
-        </div>
-      </div>
-    </section>
-  );
+        </section>
+    );
 };
 
 export default TowHitchService;
